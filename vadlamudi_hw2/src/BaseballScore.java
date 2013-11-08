@@ -1,7 +1,7 @@
 // Name: Sai Kiran Vadlamudi		Username: svadlamudi		Section: B01
 // Name: Marilda Bozdo				Username: mbozdo			Section: B06
 
-public class BaseballScore implements IScore{
+public class BaseballScore implements IScore {
 
 	double runs1;
 	double runs2;
@@ -14,5 +14,14 @@ public class BaseballScore implements IScore{
 		this.runs2 = runs2In;
 		this.totalInnings = totalInningsIn;
 		
+	}
+	
+	public String winner(IContestant contestantOne, IContestant contestantTwo){
+		if(this.runs1 > this.runs2)
+			return contestantOne.getName();
+		else if(this.runs2 < this.runs1)
+			return contestantTwo.getName();
+		else
+			return "Invalid Match";
 	}
 }

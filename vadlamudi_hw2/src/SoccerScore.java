@@ -16,4 +16,13 @@ public class SoccerScore implements IScore{
 		this.extraTime = extraTimeIn;
 		
 	}
+	
+	public String winner(IContestant contestantOne, IContestant contestantTwo) {
+		if(this.goalsOne > this.goalsTwo)
+			return contestantOne.getName();
+		else if(this.goalsOne < this.goalsTwo)
+			return contestantTwo.getName();
+		else
+			return "Invalid Match";
+	}
 }

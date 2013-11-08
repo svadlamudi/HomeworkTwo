@@ -14,4 +14,8 @@ public class BaseballContestant implements IContestant{
 		this.captainName = captainNameIn;
 		
 	}
+
+	public String getName() {
+		return this.teamName;
+	}
 }

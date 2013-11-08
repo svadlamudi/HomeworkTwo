@@ -3,5 +3,6 @@
 
 public interface IScore {
 	
+	String winner(IContestant IContestantOne, IContestant IContestantTwo);
 	
 }
