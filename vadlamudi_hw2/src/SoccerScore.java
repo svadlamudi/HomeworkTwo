@@ -16,26 +16,4 @@ public class SoccerScore implements IScore{
 		this.extraTime = extraTimeIn;
 		
 	}
-	
-	/* returns true if:
-	 * the two teams have the same number of goals,
-	 * 	extra time had to have been played
-	 */
-	public boolean isValid(){
-		
-		if((this.goalsOne == this.goalsTwo) && this.extraTime)
-			return true;
-		else if((this.goalsOne != this.goalsTwo) && (this.extraTime == false))
-			return true;
-		else
-			return false;
-		
-	}
-	/*
-	 * How did I make sure that every sport has to include to isValid method
-	 * -> I accomplished this by implementing the Score class which has an abstract
-	 *    method called isValid and so every sport implements score so every sport has
-	 *    to implement a isValid method.
-	 */
-	
 }

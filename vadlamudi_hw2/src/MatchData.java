@@ -4,14 +4,14 @@
 public class MatchData {
 
 	// MatchData Object field Initializers
-	String teamOne;
-	String teamTwo;
+	IContestant contestantOne;
+	IContestant contestantTwo;
 	IScore iScore;
 	
 	// MatchData Object Constructor
-	public MatchData(String team1In, String team2In, IScore scoreIn){
-		this.teamOne = team1In;
-		this.teamTwo = team2In;
+	public MatchData(IContestant contestantOneIn, IContestant contestantTwoIn, IScore scoreIn){
+		this.contestantOne = contestantOneIn;
+		this.contestantTwo = contestantTwoIn;
 		this.iScore = scoreIn;
 	}	
 }

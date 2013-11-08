@@ -10,10 +10,4 @@ public class SwimmingScore implements IScore{
 		this.timeOne = timeOneIn;
 		this.timeTwo = timeTwoIn;
 	}
-
-	@Override
-	public boolean isValid() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }

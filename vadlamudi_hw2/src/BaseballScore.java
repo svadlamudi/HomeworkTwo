@@ -15,26 +15,4 @@ public class BaseballScore implements IScore{
 		this.totalInnings = totalInningsIn;
 		
 	}
-	
-	/* returns true if:
-	 * 	atleast 7 innings were played
-	 * the two teams do not have the same runs
-	 */
-	public boolean isValid(){
-		
-		if(this.totalInnings < 7)
-			return false;
-		else if((this.runs1 == this.runs2))
-			return false;
-		else
-			return true;
-		
-	}
-	/*
-	 * How did I make sure that every sport has to include to isValid method
-	 * -> I accomplished this by implementing the Score class which has an abstract
-	 *    method called isValid and so every sport implements score so every sport has
-	 *    to implement a isValid method.
-	 */
-	
 }
