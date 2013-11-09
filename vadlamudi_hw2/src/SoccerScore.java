@@ -17,7 +17,7 @@ public class SoccerScore implements IScore{
 		
 	}
 	
-        /* returns true if:
+    /* returns true if:
 	 * the two teams have the same number of goals,
 	 * 	extra time had to have been played
 	 */
@@ -31,7 +31,8 @@ public class SoccerScore implements IScore{
 			return false;
 		
 	}
-        
+    
+	// returns the name of the winner of the soccer match
 	public String winner(IContestant contestantOne, IContestant contestantTwo) {
 		if(this.goalsOne > this.goalsTwo)
 			return contestantOne.getName();

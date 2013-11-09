@@ -3,14 +3,17 @@
 
 public class SwimmingScore implements IScore{
 	
+	// Object field initializers
 	double timeOne;
 	double timeTwo;
 	
+	// constructor for the swimming score object
 	public SwimmingScore(double timeOneIn, double timeTwoIn){
 		this.timeOne = timeOneIn;
 		this.timeTwo = timeTwoIn;
 	}
-
+	
+	// returns true if the swimming score is valid
 	public boolean isValid(){
             return this.timeOne != this.timeTwo;
         }

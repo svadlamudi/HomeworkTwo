@@ -3,6 +3,7 @@
 
 public class SwimmingContestant extends AbsRanked {
 
+	// constuctor for the swimming contestant object
 	public SwimmingContestant(String rankTeamNameIn, int rankIn){		
 		super(rankTeamNameIn, rankIn);
 	}

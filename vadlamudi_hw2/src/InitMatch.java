@@ -14,7 +14,7 @@ public class InitMatch implements ITournament{
 	// returns true if all scores in match are valid
 	public boolean allScoresValid() {
 	
-		return this.matchData.iScore.isValid();
+		return this.matchData.score.isValid();
 		
 	}
 	
@@ -43,5 +43,10 @@ public class InitMatch implements ITournament{
 		else
 			return 0;
 		
+	}
+
+	// returns true if the initial match is valid
+	public boolean satisfiesInvariant() {
+		return this.validTournament();
 	}
 }

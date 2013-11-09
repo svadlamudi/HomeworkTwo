@@ -3,9 +3,10 @@
 
 public class SoccerContestant extends AbsTeamRanked {
 
-    public SoccerContestant(String teamNameIn, int numPlayersIn, String captainNameIn, int rankIn){
+    // constructor for the soccer contestant object
+	public SoccerContestant(String teamNameIn, int numPlayersIn, String captainNameIn, int rankIn){
 				
-	super(teamNameIn, numPlayersIn, captainNameIn, rankIn);
+    	super(teamNameIn, numPlayersIn, captainNameIn, rankIn);
 		
     }
 }

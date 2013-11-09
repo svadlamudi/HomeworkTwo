@@ -6,12 +6,12 @@ public class MatchData {
 	// MatchData Object field Initializers
 	IContestant contestantOne;
 	IContestant contestantTwo;
-	IScore iScore;
+	IScore score;
 	
 	// MatchData Object Constructor
 	public MatchData(IContestant contestantOneIn, IContestant contestantTwoIn, IScore scoreIn){
 		this.contestantOne = contestantOneIn;
 		this.contestantTwo = contestantTwoIn;
-		this.iScore = scoreIn;
+		this.score = scoreIn;
 	}	
 }

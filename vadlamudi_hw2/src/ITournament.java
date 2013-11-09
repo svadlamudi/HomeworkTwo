@@ -14,4 +14,7 @@ public interface ITournament {
 	
 	// return the number of matches played by the given contestant in a tournament
 	int matchesPlayedBy(String contestant);
+	
+	// returns true if the binary tree satisfies all invariants
+	boolean satisfiesInvariant();
 }

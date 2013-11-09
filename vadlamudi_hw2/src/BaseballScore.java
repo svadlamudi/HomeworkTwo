@@ -16,7 +16,7 @@ public class BaseballScore implements IScore {
 		
 	}
 	
-        /* returns true if:
+    /* returns true if:
 	 * 	atleast 7 innings were played
 	 * the two teams do not have the same runs
 	 */
@@ -30,7 +30,8 @@ public class BaseballScore implements IScore {
 			return true;
 		
 	}
-        
+    
+	// returns the winner of the baseball match	
 	public String winner(IContestant contestantOne, IContestant contestantTwo){
 		if(this.runs1 > this.runs2)
 			return contestantOne.getName();

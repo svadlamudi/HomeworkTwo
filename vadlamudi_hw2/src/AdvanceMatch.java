@@ -62,5 +62,10 @@ public class AdvanceMatch implements ITournament{
 			this.feederTwo.matchesPlayedBy(contestant));
 		
 	}
+
+	// returns true if the tournament is valid
+	public boolean satisfiesInvariant() {
+		return this.validTournament();
+	}
 	
 }
