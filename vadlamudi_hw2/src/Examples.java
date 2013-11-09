@@ -1,11 +1,7 @@
-import tester.Tester;
-
-// Name: Sai Kiran Vadlamudi		Username: svadlamudi		Section: B01
-// Name: Marilda Bozdo				Username: mbozdo			Section: B06
+import tester.*;
 
 public class Examples {
-	
-	Examples() {};
+    Examples() {};
 	
 /////////////////////////////////////////////////////////////////////*Baseball*/////////////////////////////////////////////////////////////
 	
@@ -34,11 +30,28 @@ public class Examples {
 	
 	MatchData swimming = new MatchData(swimmingContestantOne, swimmingContestantTwo, swimmingScoreOne);	
 	
-/////////////////////////////////////////////////////////////////////*Tests*////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////*Tournaments*///////////////////////////////////////////////////////////
+        
+        SoccerScore soccerFinals = new SoccerScore(15, 7, false);
+        SoccerContestant soccerFinalistOne = new SoccerContestant("Barcelona", 15, "Rob", 1);
+        SoccerContestant soccerFinalistTwo = new SoccerContestant("Madrid", 15, "Tim", 2);
+        MatchData soccerFinal = new MatchData(soccerFinalistOne, soccerFinalistTwo, soccerFinals);
+        
+        SoccerScore soccerSemiFinalsOne = new SoccerScore(13, 10, false);
+        SoccerContestant SoccerSemiFinalistOne = new SoccerContestant("Barcelona", 15 , "Jim", 1);
+        SoccerContestant SoccerSemiFinalistTwo = new SoccerContestant("UK", 15 , "Bob", 3);
+        MatchData soccerSemiFinalOne = new MatchData(SoccerSemiFinalistOne, SoccerSemiFinalistTwo, soccerSemiFinalsOne);
+        
+/////////////////////////////////////////////////////////////////////*Tests*////////////////////////////////////////////////////////////////        
 	
 	boolean testWinner(Tester t){
 		return (t.checkExpect(baseballScoreOne.winner(baseballContestantOne, baseballContestantTwo), "Red Sox") &&
 				t.checkExpect(soccerScoreOne.winner(soccerContestantOne, soccerContestantTwo), "Barcelona")     &&
 				t.checkExpect(swimmingScoreOne.winner(swimmingContestantOne, swimmingContestantTwo), "Jack"));
 	}
+        
+        boolean testHasBetterRanking(Tester t){
+            return (t.checkExpect(soccerContestantOne.hasBetterRanking(soccerContestantTwo), true) &&
+                    t.checkExpect(swimmingContestantOne.hasBetterRanking(swimmingContestantTwo), false));
+        }
 }

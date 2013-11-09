@@ -11,7 +11,11 @@ public class SwimmingScore implements IScore{
 		this.timeTwo = timeTwoIn;
 	}
 
-	public String winner(IContestant contestantOne, IContestant contestantTwo) {
+	public boolean isValid(){
+            return this.timeOne != this.timeTwo;
+        }
+        
+        public String winner(IContestant contestantOne, IContestant contestantTwo) {
 		if(this.timeTwo > timeOne)
 			return contestantOne.getName();
 		else if(this.timeOne > this.timeTwo)

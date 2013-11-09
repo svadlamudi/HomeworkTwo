@@ -16,6 +16,21 @@ public class BaseballScore implements IScore {
 		
 	}
 	
+        /* returns true if:
+	 * 	atleast 7 innings were played
+	 * the two teams do not have the same runs
+	 */
+	public boolean isValid(){
+		
+		if(this.totalInnings < 7)
+			return false;
+		else if((this.runs1 == this.runs2))
+			return false;
+		else
+			return true;
+		
+	}
+        
 	public String winner(IContestant contestantOne, IContestant contestantTwo){
 		if(this.runs1 > this.runs2)
 			return contestantOne.getName();

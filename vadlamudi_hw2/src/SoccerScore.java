@@ -17,6 +17,21 @@ public class SoccerScore implements IScore{
 		
 	}
 	
+        /* returns true if:
+	 * the two teams have the same number of goals,
+	 * 	extra time had to have been played
+	 */
+	public boolean isValid(){
+		
+		if((this.goalsOne == this.goalsTwo) && this.extraTime)
+			return true;
+		else if((this.goalsOne != this.goalsTwo) && (this.extraTime == false))
+			return true;
+		else
+			return false;
+		
+	}
+        
 	public String winner(IContestant contestantOne, IContestant contestantTwo) {
 		if(this.goalsOne > this.goalsTwo)
 			return contestantOne.getName();

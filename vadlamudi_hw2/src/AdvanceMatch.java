@@ -1,4 +1,3 @@
-
 // Name: Sai Kiran Vadlamudi		Username: svadlamudi		Section: B01
 // Name: Marilda Bozdo				Username: mbozdo			Section: B06
 
@@ -22,16 +21,16 @@ public class AdvanceMatch implements ITournament{
 	public boolean allScoresValid() {
 		
 		return (this.initData.allScoresValid()  && 
-				this.feederOne.allScoresValid() && 
-				this.feederTwo.allScoresValid());
+			this.feederOne.allScoresValid() && 
+			this.feederTwo.allScoresValid());
 		
 	}
 	
 	// returns true if all players in an AdvanceMatch advanced from (previous) feeder matches
 	public boolean playersAlwaysAdvanced(){
 		
-		String team1 = this.initData.matchData.teamOne;
-		String team2 = this.initData.matchData.teamTwo;
+		String team1 = this.initData.matchData.contestantOne.getName();
+		String team2 = this.initData.matchData.contestantTwo.getName();
 		
 		boolean teamOneFound = this.playerInMatch(team1);
 		boolean teamTwoFound = this.playerInMatch(team2);				
@@ -43,7 +42,7 @@ public class AdvanceMatch implements ITournament{
 	public boolean playerInMatch(String teamName) {
 		
 		 return (this.feederOne.playerInMatch(teamName) ||
-				 this.feederTwo.playerInMatch(teamName));
+                         this.feederTwo.playerInMatch(teamName));
 		
 	}
 	
@@ -51,7 +50,7 @@ public class AdvanceMatch implements ITournament{
 	public boolean validTournament(){
 		
 		return (this.allScoresValid() &&
-				this.playersAlwaysAdvanced());
+			this.playersAlwaysAdvanced());
 		
 	}
 	
@@ -59,8 +58,8 @@ public class AdvanceMatch implements ITournament{
 	public int matchesPlayedBy(String contestant){
 		
 		return (this.initData.matchesPlayedBy(contestant) +
-				this.feederOne.matchesPlayedBy(contestant) +
-				this.feederTwo.matchesPlayedBy(contestant));
+			this.feederOne.matchesPlayedBy(contestant) +
+			this.feederTwo.matchesPlayedBy(contestant));
 		
 	}
 	

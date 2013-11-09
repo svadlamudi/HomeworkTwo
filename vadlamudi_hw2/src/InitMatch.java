@@ -21,8 +21,8 @@ public class InitMatch implements ITournament{
 	// return true if the given team exists in either of the two teams in the match
 	public boolean playerInMatch(String teamName){
 		
-		return (this.matchData.teamOne.equals(teamName) ||
-				this.matchData.teamTwo.equals(teamName));
+		return (this.matchData.contestantOne.getName().equals(teamName) ||
+			this.matchData.contestantTwo.getName().equals(teamName));
 		
 	}
 	
@@ -36,9 +36,9 @@ public class InitMatch implements ITournament{
 	// returns the number of matches played by the given contestant in the match
 	public int matchesPlayedBy(String contestant){
 		
-		if(this.matchData.teamOne.equals(contestant))
+		if(this.matchData.contestantOne.getName().equals(contestant))
 			return 1;
-		else if(this.matchData.teamTwo.equals(contestant))
+		else if(this.matchData.contestantTwo.getName().equals(contestant))
 			return 1;
 		else
 			return 0;

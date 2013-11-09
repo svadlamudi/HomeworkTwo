@@ -1,6 +1,3 @@
-// Name: Sai Kiran Vadlamudi		Username: svadlamudi		Section: B01
-// Name: Marilda Bozdo				Username: mbozdo			Section: B06
-
 import tester.* ;
   
 class Main {
@@ -10,3 +7,4 @@ class Main {
     Tester.run (E) ;
   }
 }
+
