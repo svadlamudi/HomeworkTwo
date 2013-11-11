@@ -42,7 +42,7 @@ public class AdvanceMatch implements ITournament{
 	public boolean playerInMatch(String teamName) {
 		
 		 return (this.feederOne.playerInMatch(teamName) ||
-                         this.feederTwo.playerInMatch(teamName));
+                 this.feederTwo.playerInMatch(teamName));
 		
 	}
 	
@@ -65,7 +65,10 @@ public class AdvanceMatch implements ITournament{
 
 	// returns true if the tournament is valid
 	public boolean satisfiesInvariant() {
-		return this.validTournament();
+		return (this.validTournament() &&
+				(this.matchesPlayedBy(this.initData.matchData.contestantOne.getName()) ==
+				 this.matchesPlayedBy(this.initData.matchData.contestantTwo.getName())));
+				
 	}
 	
 }

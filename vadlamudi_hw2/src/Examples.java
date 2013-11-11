@@ -60,19 +60,36 @@ public class Examples {
         SoccerContestant soccerDistrictFour = new SoccerContestant("Liverpool", 15, "Shane", 2);
         MatchData soccerDistrictMatchTwo = new MatchData(soccerDistrictThree, soccerDistrictFour, soccerDistrictsTwo);
         
+        SoccerScore soccerDistrictsThree = new SoccerScore(18, 8, false);
+        SoccerContestant soccerDistrictFive = new SoccerContestant("Madrid", 15, "Jerry", 1);
+        SoccerContestant soccerDistrictSix = new SoccerContestant("Ghana", 15, "James", 2);
+        MatchData soccerDistrictMatchThree = new MatchData(soccerDistrictFive, soccerDistrictSix, soccerDistrictsThree);
+        
+        SoccerScore soccerDistrictsFour = new SoccerScore(15, 8, false);
+        SoccerContestant soccerDistrictSeven = new SoccerContestant("Manchester", 15, "Jerry", 1);
+        SoccerContestant soccerDistrictEight = new SoccerContestant("Arsenal", 15, "Brian", 2);
+        MatchData soccerDistrictMatchFour = new MatchData(soccerDistrictSeven, soccerDistrictEight, soccerDistrictsFour);
+        
         InitMatch soccerFinalTournament = new InitMatch(soccerFinalMatch);
         
         InitMatch soccerSemiFinalInitTournamentOne = new InitMatch(soccerSemiFinalMatchOne);
-        InitMatch soccerSemiFinalTournamentTwo = new InitMatch(soccerSemiFinalMatchTwo);
+        InitMatch soccerSemiFinalInitTournamentTwo = new InitMatch(soccerSemiFinalMatchTwo);
         
         InitMatch soccerDistrictTournamentOne = new InitMatch(soccerDistrictMatchOne);
         InitMatch soccerDistrictTournamentTwo = new InitMatch(soccerDistrictMatchTwo);
+        InitMatch soccerDistrictTournamentThree = new InitMatch(soccerDistrictMatchThree);
+        InitMatch soccerDistrictTournamentFour = new InitMatch(soccerDistrictMatchFour);
         
         AdvanceMatch soccerSemiFinalTournamentOne = new AdvanceMatch(soccerSemiFinalInitTournamentOne, soccerDistrictTournamentOne, soccerDistrictTournamentTwo);
+        AdvanceMatch soccerSemiFinalTournamentTwo = new AdvanceMatch(soccerSemiFinalInitTournamentTwo, soccerDistrictTournamentThree, soccerDistrictTournamentFour);
         
         ITournament soccerTournament = new AdvanceMatch(soccerFinalTournament,
         												soccerSemiFinalTournamentOne,
-        												soccerSemiFinalTournamentTwo);
+        												soccerSemiFinalInitTournamentTwo);
+        
+        ITournament soccerTournamentTwo = new AdvanceMatch(soccerFinalTournament,
+														   soccerSemiFinalTournamentOne,
+														   soccerSemiFinalTournamentTwo);
         
 /////////////////////////////////////////////////////////////////////*Tests*////////////////////////////////////////////////////////////////        
 	
@@ -88,6 +105,7 @@ public class Examples {
         }
         
         boolean testSatisfiesInvariant(Tester t){
-        	return t.checkExpect(soccerTournament.satisfiesInvariant(), true);
+        	return (t.checkExpect(soccerTournament.satisfiesInvariant(), false) &&
+        			t.checkExpect(soccerTournamentTwo.satisfiesInvariant(), true));
         }
 }
