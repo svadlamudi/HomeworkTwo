@@ -18,7 +18,8 @@ public class SwimmingScore implements IScore{
             return this.timeOne != this.timeTwo;
         }
         
-        public String winner(IContestant contestantOne, IContestant contestantTwo) {
+	// returns the name of the winner of the match
+	public String winner(IContestant contestantOne, IContestant contestantTwo) {
 		if(this.timeTwo > timeOne)
 			return contestantOne.getName();
 		else if(this.timeOne > this.timeTwo)

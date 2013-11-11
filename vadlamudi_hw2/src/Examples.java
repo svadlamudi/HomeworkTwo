@@ -35,11 +35,13 @@ public class Examples {
 	
 /////////////////////////////////////////////////////////////////////*Tournaments*///////////////////////////////////////////////////////////
         
-        SoccerScore soccerFinals = new SoccerScore(15, 7, false);
+      	// Soccer Final Matches
+		SoccerScore soccerFinals = new SoccerScore(15, 7, false);
         SoccerContestant soccerFinalistOne = new SoccerContestant("Barcelona", 15, "Rob", 1);
         SoccerContestant soccerFinalistTwo = new SoccerContestant("Madrid", 15, "Tim", 2);
         MatchData soccerFinalMatch = new MatchData(soccerFinalistOne, soccerFinalistTwo, soccerFinals);
         
+        // Soccer Semi-Final Matches
         SoccerScore soccerSemiFinalsOne = new SoccerScore(13, 10, false);
         SoccerContestant soccerSemiFinalistOne = new SoccerContestant("Barcelona", 15 , "Jim", 2);
         SoccerContestant soccerSemiFinalistTwo = new SoccerContestant("UK", 15 , "Bob", 3);
@@ -50,6 +52,7 @@ public class Examples {
         SoccerContestant soccerSemiFinalistFour = new SoccerContestant("Machester", 15 , "Rick", 4);
         MatchData soccerSemiFinalMatchTwo = new MatchData(soccerSemiFinalistThree, soccerSemiFinalistFour, soccerSemiFinalsTwo);
         
+        // Soccer District Matches
         SoccerScore soccerDistrictsOne = new SoccerScore(12, 9, false);
         SoccerContestant soccerDistrictOne = new SoccerContestant("Barcelona", 15, "Rob", 1);
         SoccerContestant soccerDistrictTwo = new SoccerContestant("Chelsea", 15, "Mark", 2);
@@ -70,19 +73,24 @@ public class Examples {
         SoccerContestant soccerDistrictEight = new SoccerContestant("Arsenal", 15, "Brian", 2);
         MatchData soccerDistrictMatchFour = new MatchData(soccerDistrictSeven, soccerDistrictEight, soccerDistrictsFour);
         
+        // Soccer Final Tournaments
         InitMatch soccerFinalTournament = new InitMatch(soccerFinalMatch);
         
+        // Soccer Semi-Final Tournaments
         InitMatch soccerSemiFinalInitTournamentOne = new InitMatch(soccerSemiFinalMatchOne);
         InitMatch soccerSemiFinalInitTournamentTwo = new InitMatch(soccerSemiFinalMatchTwo);
         
+        // Soccer District Tournaments
         InitMatch soccerDistrictTournamentOne = new InitMatch(soccerDistrictMatchOne);
         InitMatch soccerDistrictTournamentTwo = new InitMatch(soccerDistrictMatchTwo);
         InitMatch soccerDistrictTournamentThree = new InitMatch(soccerDistrictMatchThree);
         InitMatch soccerDistrictTournamentFour = new InitMatch(soccerDistrictMatchFour);
         
+        // Soccer Semi-Final Tournaments
         AdvanceMatch soccerSemiFinalTournamentOne = new AdvanceMatch(soccerSemiFinalInitTournamentOne, soccerDistrictTournamentOne, soccerDistrictTournamentTwo);
         AdvanceMatch soccerSemiFinalTournamentTwo = new AdvanceMatch(soccerSemiFinalInitTournamentTwo, soccerDistrictTournamentThree, soccerDistrictTournamentFour);
         
+        // Soccer Final Tournaments
         ITournament soccerTournament = new AdvanceMatch(soccerFinalTournament,
         												soccerSemiFinalTournamentOne,
         												soccerSemiFinalInitTournamentTwo);
