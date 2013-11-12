@@ -21,8 +21,8 @@ public class AdvanceMatch implements ITournament{
 	public boolean allScoresValid() {
 		
 		return (this.initData.allScoresValid()  && 
-			this.feederOne.allScoresValid() && 
-			this.feederTwo.allScoresValid());
+				this.feederOne.allScoresValid() && 
+				this.feederTwo.allScoresValid());
 		
 	}
 	
@@ -50,7 +50,7 @@ public class AdvanceMatch implements ITournament{
 	public boolean validTournament(){
 		
 		return (this.allScoresValid() &&
-			this.playersAlwaysAdvanced());
+				this.playersAlwaysAdvanced());
 		
 	}
 	
@@ -58,8 +58,8 @@ public class AdvanceMatch implements ITournament{
 	public int matchesPlayedBy(String contestant){
 		
 		return (this.initData.matchesPlayedBy(contestant) +
-			this.feederOne.matchesPlayedBy(contestant) +
-			this.feederTwo.matchesPlayedBy(contestant));
+				this.feederOne.matchesPlayedBy(contestant) +
+				this.feederTwo.matchesPlayedBy(contestant));
 		
 	}
 
